@@ -8,5 +8,5 @@ The utility adds APP-LIST.xml file to a specified ZIP archive. If ZIP archive al
 
 ## Example
 
-  php app-list-xml.php WordPress-3.4.2-3.app.zip
+    php app-list-xml.php WordPress-3.4.2-3.app.zip
 
