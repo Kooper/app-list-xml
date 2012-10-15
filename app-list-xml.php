@@ -10,7 +10,8 @@ $appList = getAppListXml();
 
 for ($i = 0; $i < $zip->numFiles; ++$i) {
 
-    $fileName = $zip->statIndex($i)['name'];
+    $fileStat = $zip->statIndex($i);
+    $fileName = $fileStat['name'];
 
     // I am foolproof.
     if ('APP-LIST.xml' == $fileName) {
@@ -30,7 +31,7 @@ for ($i = 0; $i < $zip->numFiles; ++$i) {
     }
 
     // Read small files into memory, extract big files to disk.
-    $fileSize = $zip->statIndex($i)['size'];
+    $fileSize = $fileStat['size'];
 
     if ($fileSize < IN_MEM_FILE_SIZE) {
 
